@@ -7,3 +7,6 @@
 # ignore configurations to VSCode and names of VSCode workspaces
 .vscode
 *.code-workspace
+
+# ignore the python cache file
+__pycache__
