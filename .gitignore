@@ -1,0 +1,9 @@
+# ignore all .a files
+*.a
+
+# ignore all .o files
+*.o
+
+# ignore configurations to VSCode and names of VSCode workspaces
+.vscode
+*.code-workspace
