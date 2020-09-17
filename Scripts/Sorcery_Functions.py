@@ -75,7 +75,6 @@ def printSpellBook(spellBook):
             break
         elif(spellBook[i].getForbiddenStatus()):
             forbiddenSpellFlag = True
-            break
 
     spellBook[0].displayCount()
     if (hippoFlag):
