@@ -60,7 +60,7 @@ def printSpellBook(spellBook):
     hippoSpellName = "Summon Hippopotamus"
     hippoFlag = False
     forbiddenSpellFlag = False
-    hippoSpellLocation = -1
+    hippoSpellLocation = None
 
     if (len(spellBook) <= 0):
         print("The spell book is currently empty;")
@@ -75,21 +75,30 @@ def printSpellBook(spellBook):
             break
         elif(spellBook[i].getForbiddenStatus()):
             forbiddenSpellFlag = True
+            break
 
     spellBook[0].displayCount()
     if (hippoFlag):
         print("The hippopotamus spell is too powerful. It ")
         print("should not be added to the spellBook! ")
         print("Here's some info on it anyway: ")
-        spellBook[hippoSpellLocation].displayMagicAttributes()
+        # The variable hippoSpellLocation should have been initialized
+        # before it is used since, after setting the hippoFlag variable
+        # to True, we immediately initialize it to a numerical value,
+        # and additionally this is the only location it is used. We will
+        # still check anyway however just to be safe.
+        if (hippoSpellLocation is not None):
+            spellBook[hippoSpellLocation].displayMagicAttributes()
+        else:
+            print("Error: the variable hippoSpellLocation was never set.")
 
     elif(forbiddenSpellFlag):
         print("Caution: At least one forbidden spell was found.")
         print("Here is a complete list of the forbidden spells")
         print("found in the spell book:")
-        for i in range(len(spellBook)):
-            if (spellBook[i].getForbiddenStatus()):
-                spellBook[i].displayMagicAttributes()
+        for spell in spellBook:
+            if (spell.getForbiddenStatus()):
+                spell.displayMagicAttributes()
 
     else:
         print("Check complete! All spells are valid and hippo free.")
