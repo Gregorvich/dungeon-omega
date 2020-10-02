@@ -2,22 +2,6 @@ import Sorcery_Functions
 
 # Testing our SorceryFunctions module
 
-# The below if statement is added in case we want to input
-# arguments in the command line for testing the Sorcery function.
-# So it's mainly added for convenience, since an alternative
-# would be to manually edit this script. When command line
-# arguments are used, the Main function expects the first
-# argument to be a boolean, although if this is not the case
-# it will type cast the argument to type "bool"
-# if (__name__ == "__main__"):
-#     import sys
-#     includeForbiddenSpells = bool(sys.argv[1])
-#     createSpells = Sorcery_Functions.createSpells
-#     printSpellBook = Sorcery_Functions.printSpellBook
-
-#    spellBook = createSpells(includeForbiddenSpells)
-#    printSpellBook(spellBook)
-
 # A function used for testing the Sorcery_Functions
 # module
 def testSorceries():
@@ -50,3 +34,6 @@ def testSorceries():
     print()
 
     return
+
+# Calling our testSorceries function
+testSorceries()
