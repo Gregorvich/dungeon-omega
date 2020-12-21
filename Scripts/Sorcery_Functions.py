@@ -19,6 +19,12 @@ class Sorcery:
     def getName(self):
         return self.name
 
+    def getMPCost(self):
+        return self.MPCost
+        
+    def getElementalAlignment(self):
+        return self.element
+
     def getForbiddenStatus(self):
         return self.forbidden
 
