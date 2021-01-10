@@ -1,6 +1,6 @@
 import sqlite3
 from Sorcery_Functions import Sorcery
-from Sorcery_Functions import createSpells
+from Sorcery_Helper_Functions import createSpells
 
 database = sqlite3.connect("Database_Objects/sorceries.db")
 cur = database.cursor()
